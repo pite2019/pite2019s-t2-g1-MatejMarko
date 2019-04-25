@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Python in the Enterprise",
+    "ects": 5,
+    "code": "pite2019"
+  },
+  {
+    "name": "Advanced Database Systems",
+    "ects": 3,
+    "code": "ads2019"
+  },
+  {
+    "name": "Math 3",
+    "ects": 5,
+    "code": "math2019"
+  }
+]

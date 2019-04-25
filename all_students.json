@@ -1,0 +1,668 @@
+[
+  {
+    "first_name": "Matej",
+    "last_name": "Marko",
+    "birth_date": "6.1.1994",
+    "email_address": "matej.mbssk@gmail.com",
+    "student_id": "E5033861",
+    "classes": [
+      {
+        "code": "pite2019",
+        "grades": [
+          5,
+          3,
+          4,
+          4,
+          5,
+          3,
+          3,
+          3,
+          2
+        ],
+        "presence": [
+          true,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "code": "ads2019",
+        "grades": [
+          4,
+          3,
+          10,
+          3,
+          4,
+          2
+        ],
+        "presence": [
+          true,
+          false,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          false
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Paul",
+    "last_name": "Smith",
+    "birth_date": "5.5.1994",
+    "email_address": "paul@gmail.com",
+    "student_id": "E9260179",
+    "classes": [
+      {
+        "code": "ads2019",
+        "grades": [
+          4,
+          2,
+          5
+        ],
+        "presence": [
+          true,
+          false,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "code": "math2019",
+        "grades": [
+          5,
+          5
+        ],
+        "presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "James",
+    "last_name": "White",
+    "birth_date": "15.7.1994",
+    "email_address": "james@gmail.com",
+    "student_id": "E6561207",
+    "classes": [
+      {
+        "code": "pite2019",
+        "grades": [
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "presence": [
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "code": "ads2019",
+        "grades": [
+          5,
+          4,
+          2
+        ],
+        "presence": [
+          true,
+          false,
+          true,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "code": "math2019",
+        "grades": [
+          5,
+          3
+        ],
+        "presence": [
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Andrew",
+    "last_name": "Sand",
+    "birth_date": "3.6.1994",
+    "email_address": "andrew@gmail.com",
+    "student_id": "E6929855",
+    "classes": [
+      {
+        "code": "pite2019",
+        "grades": [
+          2,
+          3,
+          5,
+          2,
+          4
+        ],
+        "presence": [
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "code": "math2019",
+        "grades": [
+          2,
+          4
+        ],
+        "presence": [
+          false,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          false,
+          true,
+          false
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Maria",
+    "last_name": "Black",
+    "birth_date": "3.8.1994",
+    "email_address": "maria@gmail.com",
+    "student_id": "E6738714",
+    "classes": [
+      {
+        "code": "ads2019",
+        "grades": [
+          5,
+          4,
+          3
+        ],
+        "presence": [
+          true,
+          false,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Mike",
+    "last_name": "Morris",
+    "birth_date": "26.9.1994",
+    "email_address": "mike@gmail.com",
+    "student_id": "E4932657",
+    "classes": [
+      {
+        "code": "pite2019",
+        "grades": [
+          3,
+          4,
+          2,
+          3,
+          2
+        ],
+        "presence": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          false,
+          true
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Jory",
+    "last_name": "Walker",
+    "birth_date": "14.6.1994",
+    "email_address": "jory@gmail.com",
+    "student_id": "E8795132",
+    "classes": [
+      {
+        "code": "pite2019",
+        "grades": [
+          2,
+          2,
+          3,
+          4,
+          2
+        ],
+        "presence": [
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "code": "ads2019",
+        "grades": [
+          3,
+          4,
+          2
+        ],
+        "presence": [
+          true,
+          false,
+          true,
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "code": "math2019",
+        "grades": [
+          2,
+          2
+        ],
+        "presence": [
+          false,
+          true,
+          true,
+          false,
+          true,
+          false,
+          false,
+          true,
+          true,
+          false
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Catarina",
+    "last_name": "ORiley",
+    "birth_date": "1.7.1994",
+    "email_address": "catarina@gmail.com",
+    "student_id": "E9010170",
+    "classes": [
+      {
+        "code": "pite2019",
+        "grades": [
+          5,
+          4,
+          2,
+          5,
+          5
+        ],
+        "presence": [
+          false,
+          false,
+          true,
+          true,
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "code": "ads2019",
+        "grades": [
+          4,
+          2,
+          4
+        ],
+        "presence": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          false
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Jessica",
+    "last_name": "McCartney",
+    "birth_date": "14.12.1994",
+    "email_address": "jessica@gmail.com",
+    "student_id": "E6182759",
+    "classes": [
+      {
+        "code": "ads2019",
+        "grades": [
+          3,
+          3,
+          4
+        ],
+        "presence": [
+          true,
+          true,
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "code": "math2019",
+        "grades": [
+          5,
+          2
+        ],
+        "presence": [
+          false,
+          false,
+          false,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Simon",
+    "last_name": "Brown",
+    "birth_date": "5.11.1994",
+    "email_address": "simon@gmail.com",
+    "student_id": "E4024728",
+    "classes": [
+      {
+        "code": "pite2019",
+        "grades": [
+          4,
+          2,
+          2,
+          4,
+          2
+        ],
+        "presence": [
+          false,
+          true,
+          false,
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "code": "ads2019",
+        "grades": [
+          2,
+          3,
+          2
+        ],
+        "presence": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "code": "math2019",
+        "grades": [
+          4,
+          5
+        ],
+        "presence": [
+          false,
+          false,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          false
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Daniel",
+    "last_name": "Blaire",
+    "birth_date": "26.9.1994",
+    "email_address": "daniel@gmail.com",
+    "student_id": "E6064070",
+    "classes": [
+      {
+        "code": "pite2019",
+        "grades": [
+          2,
+          3,
+          4,
+          3,
+          5
+        ],
+        "presence": [
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          false
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Gordon",
+    "last_name": "May",
+    "birth_date": "5.1.1994",
+    "email_address": "gordon@gmail.com",
+    "student_id": "E9506395",
+    "classes": [
+      {
+        "code": "pite2019",
+        "grades": [
+          5,
+          2,
+          5,
+          5,
+          5
+        ],
+        "presence": [
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "code": "ads2019",
+        "grades": [
+          4,
+          5,
+          4
+        ],
+        "presence": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          true
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Patricia",
+    "last_name": "Hart",
+    "birth_date": "7.9.1994",
+    "email_address": "patricia@gmail.com",
+    "student_id": "E4707515",
+    "classes": [
+      {
+        "code": "pite2019",
+        "grades": [
+          3,
+          4,
+          5,
+          2,
+          3
+        ],
+        "presence": [
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "code": "ads2019",
+        "grades": [
+          3,
+          5,
+          4
+        ],
+        "presence": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          false
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Steven",
+    "last_name": "Carragher",
+    "birth_date": "9.7.1994",
+    "email_address": "steven@gmail.com",
+    "student_id": "E3577994",
+    "classes": [
+      {
+        "code": "ads2019",
+        "grades": [
+          2,
+          3,
+          4
+        ],
+        "presence": [
+          true,
+          false,
+          true,
+          true,
+          false,
+          true
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Jamie",
+    "last_name": "Gerrard",
+    "birth_date": "12.2.1994",
+    "email_address": "jamie@gmail.com",
+    "student_id": "E7136097",
+    "classes": [
+      {
+        "code": "pite2019",
+        "grades": [
+          5,
+          2,
+          2,
+          3,
+          2
+        ],
+        "presence": [
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          false
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Mick",
+    "last_name": "Daltrey",
+    "birth_date": "5.10.1994",
+    "email_address": "mick@gmail.com",
+    "student_id": "E2277565",
+    "classes": []
+  },
+  {
+    "first_name": "Roger",
+    "last_name": "Morrison",
+    "birth_date": "17.10.1994",
+    "email_address": "roger@gmail.com",
+    "student_id": "E8083537",
+    "classes": []
+  }
+]
