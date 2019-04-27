@@ -13,5 +13,10 @@
     "name": "Math 3",
     "ects": 5,
     "code": "math2019"
+  },
+  {
+    "name": "Pattern recognition",
+    "ects": 2,
+    "code": "pr2019"
   }
 ]

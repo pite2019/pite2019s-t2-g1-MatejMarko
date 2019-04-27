@@ -11,7 +11,7 @@ list_of_all_students = None
 
 class Student:
 
-    def __init__(self, first_name, last_name, birth_date, email_address, student_id=None, classes=[]):
+    def __init__(self, first_name, last_name, birth_date, email_address, student_id=None, classes=[], add=True):
 
         self.first_name = first_name
         self.last_name = last_name
@@ -20,10 +20,14 @@ class Student:
         self.student_id = student_id
         self.classes = classes
 
-        self.add_student(STUDENTS_FILE)
+        if add:
+            self.add_student(STUDENTS_FILE)
 
     def __getitem__(self, key):
         return getattr(self, key)
+
+    def __str__(self):
+        return self.student_id + ": " + self.first_name + ' ' + self.last_name
 
     def add_student(self, file_path):
 
@@ -43,6 +47,9 @@ class Student:
             list_of_all_students.append(self)
             students.append(self.__dict__)
             add_to_file(file_path, students)
+            print('Addes student with id: ' + self.student_id)
+        else:
+            print('Invalid email address')
 
     def add_class(self, code):
         already_assigned = False
@@ -92,7 +99,7 @@ class Student:
     def get_student_class_average(self, code):
         for c in self.classes:
             if c['code'] == code and len(c['grades']) != 0:
-                average_grade = sum(c['grades'])/len(c['grades'])
+                average_grade = sum(c['grades']) / len(c['grades'])
                 return 'Student ' + self.first_name + ' ' + self.last_name + ' has an average of ' + \
                        str(average_grade) + ' at class ' + code
         return 'Student ' + self.first_name + ' ' + self.last_name + ' is not assigned to class with code ' + code + \
@@ -114,7 +121,7 @@ class Student:
     def get_student_class_attendance(self, code):
         for c in self.classes:
             if c['code'] == code and len(c['presence']) != 0:
-                presence = sum(c['presence'])/len(c['presence'])*100
+                presence = sum(c['presence']) / len(c['presence']) * 100
                 return 'Student ' + self.first_name + ' ' + self.last_name + ' has attended ' + \
                        str(sum(c['presence'])) + ' out of ' + str(len(c['presence'])) + ' ' + code + \
                        ' classes, which equals to ' + str(presence) + "%"
@@ -129,11 +136,14 @@ def generate_student_id():
 
 
 def get_student_by_id(s_id):
-    return list(filter(lambda x: x.student_id == s_id, list_of_all_students))[0]
+    selected_student = list(filter(lambda x: x.student_id == s_id, list_of_all_students))
+    if len(selected_student) != 0:
+        return list(filter(lambda x: x.student_id == s_id, list_of_all_students))[0]
+    else:
+        return None
 
 
 def validate_email(emails_list, email):
-
     pattern = re.compile("(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
     if pattern.match(email) and email not in emails_list:
         return True
@@ -148,7 +158,7 @@ def set_student_from_dict(student_dict):
     email_address = student_dict['email_address']
     student_id = student_dict['student_id']
     classes = student_dict['classes']
-    return Student(name, surname, birth_date, email_address, student_id, classes)
+    return Student(name, surname, birth_date, email_address, student_id, classes, add=False)
 
 
 class Class:
@@ -194,7 +204,7 @@ def get_class_average(code):
         average = grades_total / nr_of_grades
         return 'Average grade of class ' + code + ' is ' + str(average)
 
-    return 'There are no grades assigned yet for course ' + code
+    return 'There are no grades assigned yet for course ' + code + ' or the course does not exist'
 
 
 def get_class_attendance(code):
@@ -208,9 +218,10 @@ def get_class_attendance(code):
 
     if number_of_classes != 0:
         average = total_attendances / number_of_classes * 100
-        return 'Attendance of class ' + code + ' is ' + str(average) + '%'
+        return 'Attendance of class ' + code + ' is ' + str(total_attendances) + ' out of ' + str(number_of_classes) \
+               + ' which equals to ' + str(average) + '%'
 
-    return 'There were no ' + code + ' classes so far'
+    return 'There were no ' + code + ' classes so far or the course does not exist'
 
 
 class StudentsClass:
@@ -252,6 +263,146 @@ if __name__ == '__main__':
         student = set_student_from_dict(i)
         list_of_all_students.append(student)
 
+    print('School system')
+    options = 'Enter a number to execute desired action\n' \
+              '1 - Get list of students\n' \
+              '2 - Get list of students\n' \
+              '3 - Get student average\n' \
+              '4 - Get student average by class\n' \
+              '5 - Get student attendance\n' \
+              '6 - Get student attendance by class\n' \
+              '7 - Get class average\n' \
+              '8 - Get class attendance\n' \
+              '9 - Add student\n' \
+              '10 - Add class to student\n' \
+              '11 - Add grade to student\n' \
+              '12 - Set attendance to student\n' \
+              '13 - Exit program'
+
+    action = 0
+    while action != 13:
+        print(options + '\n')
+
+        action = input('What would you like to get: ')
+        print()
+
+        if action == '1':
+            print('List of students:')
+            for stud in list_of_all_students:
+                print(stud)
+
+        elif action == '2':
+            print('List of classes:')
+            classes = get_from_json_file(CLASSES_FILE)
+            for c in classes:
+                print(c['name'] + ' (' + c['code'] + ')')
+
+        elif action == '3':
+            print('Getting student average')
+            student_id = input('Student id: ')
+            s = get_student_by_id(student_id)
+            if s is None:
+                print('Student with such id does not exist')
+            else:
+                print(s.get_student_average())
+
+        elif action == '4':
+            print('Getting student average by class')
+            student_id = input('Student id: ')
+            s = get_student_by_id(student_id)
+            if s is None:
+                print('Student with such id does not exist')
+            else:
+                class_code = input('Class code: ')
+                avg = s.get_student_class_average(class_code)
+                print(avg)
+
+        elif action == '5':
+            print('Getting student attendance')
+            student_id = input('Student id: ')
+            s = get_student_by_id(student_id)
+            if s is None:
+                print('Student with such id does not exist')
+            else:
+                print(s.get_student_general_attendance())
+
+        elif action == '6':
+            print('Getting student attendance by class')
+            student_id = input('Student id: ')
+            s = get_student_by_id(student_id)
+            if s is None:
+                print('Student with such id does not exist')
+            else:
+                class_code = input('Class code: ')
+                avg = s.get_student_class_attendance(class_code)
+                print(avg)
+
+        elif action == '7':
+            print('Getting class average')
+            class_code = input('Class code: ')
+            print(get_class_average(class_code))
+
+        elif action == '8':
+            print('Getting class attendance')
+            class_code = input('Class code: ')
+            print(get_class_attendance(class_code))
+
+        elif action == '9':
+            print('Adding new student')
+            first_name = input('First name: ')
+            last_name = input('Last name: ')
+            birth_date = input('Birth date: ')
+            email = input('Email: ')
+            Student(first_name, last_name, birth_date, email)
+
+        elif action == '10':
+            print('Adding class to student')
+            student_id = input('Student id: ')
+            class_code = input('Class code: ')
+            s = get_student_by_id(student_id)
+            if s is None:
+                print('Student with such id does not exist')
+            else:
+                s.add_class(class_code)
+
+        elif action == '11':
+            print('Adding grade to student')
+            student_id = input('Student id: ')
+            class_code = input('Class code: ')
+            grade = input('Grade: ')
+            s = get_student_by_id(student_id)
+            if s is None:
+                print('Student with such id does not exist')
+            else:
+                s.add_grade(class_code, int(grade))
+
+        elif action == '12':
+            print('Adding attendance to student')
+            student_id = input('Student id: ')
+            class_code = input('Class code: ')
+            grade = input('Did attend (y/n): ')
+            did_attend = False
+            if grade == 'y':
+                did_attend = True
+            s = get_student_by_id(student_id)
+            if s is None:
+                print('Student with such id does not exist')
+            else:
+                s.set_attendance(class_code, did_attend)
+
+        else:
+            action = 13
+
+        print('\n----------------------------------------------------------\n')
+
+    '''
+    # EXAMPLE OF USAGE
+    students_list = get_from_json_file(STUDENTS_FILE)
+    list_of_all_students = []
+    for i in students_list:
+        student = set_student_from_dict(i)
+        list_of_all_students.append(student)
+        
     for l in list_of_all_students:
         print(l.get_student_average())
         print(l.get_student_general_attendance())
@@ -287,5 +438,5 @@ if __name__ == '__main__':
     print(roger.get_student_general_attendance())
     print(roger.get_student_class_average('pite2019'))
     print(roger.get_student_class_attendance('pite2019'))
-
+    '''
     # update_class('math2019', Class('Math 3', 7, 'math2019', add=False))
